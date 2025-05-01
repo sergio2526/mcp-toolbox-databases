@@ -19,7 +19,7 @@ async def run_application():
     model = ChatVertexAI(model_name="gemini-1.5-pro")
 
     # Load the tools from the Toolbox server
-    client = ToolboxClient("http://127.0.0.1:5000")
+    client = ToolboxClient("")
     tools = await client.aload_toolset()
 
     agent = create_react_agent(model, tools, checkpointer=MemorySaver())
